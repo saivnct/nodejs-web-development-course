@@ -1,0 +1,65 @@
+-- CREATE DB
+create database NaToursDemo
+
+
+-- CREATE table
+use NaToursDemo
+go
+create table Tours(
+    Id int identity (1,1) primary key not null ,
+    Name varchar(200) not null unique,
+    Rating float default 4.5 CHECK (Rating >= 0 AND Rating <= 5),
+    Price int not null CHECK (Price >= 0),
+)
+
+-- DROP table
+use NaToursDemo
+go
+Drop table Tours
+
+
+-- insert data into table
+use NaToursDemo
+go
+insert into Tours
+    (Name, Price)
+values
+    ('tour 1',100)
+
+
+-- insert data into table
+use NaToursDemo
+go
+insert into Tours
+    (Name, Rating, Price)
+values
+    ('tour 2', 3, 100)
+
+
+
+-- update data in table
+use NaToursDemo
+go
+update Tours
+set  Name = 'Tours 3',
+     Price = 200,
+     Rating = 4.5
+where Id = 2
+
+
+
+-- delete data from table
+use NaToursDemo
+go
+delete Tours
+where Id = 3
+
+
+-- DELETE DB
+USE master;
+GO
+ALTER DATABASE NaToursDemo
+SET SINGLE_USER
+WITH ROLLBACK IMMEDIATE;
+GO
+DROP DATABASE NaToursDemo;

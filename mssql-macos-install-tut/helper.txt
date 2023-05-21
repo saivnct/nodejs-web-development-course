@@ -1,0 +1,17 @@
+1. Download & install docker from:
+	https://www.docker.com/
+
+2. Start MSSQL container. Create a local MSSQL server at port 1433, default user admin: "SA", password: "123456aA@"
+	docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=123456aA@" -p 1433:1433 --name sql1 --hostname sql1 mcr.microsoft.com/mssql/server:2022-latest
+
+3. Check running containers(you will get "CONTAINER ID"):
+	docker container ls -a
+
+4. Stop running container:
+	docker container stop <CONTAINER ID>
+
+5. Start running container:
+	docker container start <CONTAINER ID>	
+
+6. Remove container:
+	docker container rm <CONTAINER ID>	

@@ -1,0 +1,27 @@
+# init a modejs project
+npm init
+
+ npm install
+
+ #add a dependency for project
+ npm install slugify
+
+ #remove a dependency from project
+ npm rm slugify
+
+#add a dependency for development purpose
+npm install nodemon --save-dev
+
+# run a script with npm
+npm run start:dev
+
+#################GIT#########################
+
+#clone a project to local
+git clone https://github.com/saivnct/nodejs-course-grp01.git
+
+#pull project
+git pull
+
+#reset to HEAD
+git reset --hard HEAD

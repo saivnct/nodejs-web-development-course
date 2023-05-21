@@ -1,0 +1,9 @@
+//- Extend the base.pug template
+extends base
+
+//- fill up the "block content" of base template with this "block content"
+block content
+    main.main
+        .card-container
+            each tour in tours
+                include _tourcard

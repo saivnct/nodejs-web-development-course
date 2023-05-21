@@ -1,0 +1,94 @@
+npm init
+
+#https://expressjs.com/en/resources/middleware.html
+npm install express@4
+npm install nodemon --save-dev
+
+#3rd-party middleware #https://github.com/expressjs/morgan
+npm install morgan
+
+npm install dotenv
+
+VSCode install DotENV (from mikeStead) extension
+
+#tedious is the implementation of the TDS protocol which the driver uses to communicate to SQL Server
+npm install tedious
+#using mssql as wrapper of tedious
+#mssql has built-in SQL injection protection. Always use parameters or tagged template literals to pass sanitized values to your queries.
+npm install mssql
+
+#https://github.com/validatorjs/validator.js
+npm install validator
+
+#nodejs debuger
+npm install ndb --save-dev
+
+
+#https://github.com/dcodeIO/bcrypt.js
+npm install bcryptjs
+
+#https://github.com/auth0/node-jsonwebtoken
+#https://jwt.io/
+npm install jsonwebtoken
+
+
+#https://github.com/hapijs/joi
+npm install joi
+
+#rate limit
+npm install express-rate-limit
+
+#setting security HTTP headers
+#https://github.com/helmetjs/helmet
+npm install helmet
+
+#setting security cross site scripting attack
+npm install xss-clean
+
+
+#using template engine to render view to client
+#express template engines:Pug, EJS, Handlebars
+npm install pug
+
+VSCode install Pug beautify (from mrmlnc) extension
+cmd+shift+p to beautify
+
+
+#3rd-party middleware - Parse data from cookie
+npm install cookie-parser
+
+
+npm install axios
+
+
+#3rd-party middleware - For file uploading
+#https://github.com/expressjs/multer
+npm install multer
+
+
+#image processing library for node
+#https://github.com/lovell/sharp
+#https://sharp.pixelplumbing.com/api-resize
+npm install sharp
+
+
+
+
+
+
+
+
+VSCode install ESLint (from microsoft) extension
+VSCode install Prettier extension
+
+#https://eslint.org/docs/latest/rules/
+#install bundle of dev dependencies
+npm install eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev
+
+# eslint is all about rules - there're many rules that eslint try to enforce on us, we can set up the rules in .eslintrc.json file
+
+#eslint-config-prettier - disable formatter by eslint. Instead we're going to use prettier to auto format code
+#eslint-plugin-prettier - allow eslint to show formating error
+#eslint-config-airbnb - javasrcipt style guide from airbnb that we can follow
+#eslint-plugin-node - this will add couple of specific eslint rules only for nodejs, to find some errors that we might be doing when writing nodejs code
+#eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react - thesse plugin are needed by eslint-config-airbnb style guide

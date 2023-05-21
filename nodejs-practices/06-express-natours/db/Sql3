@@ -1,0 +1,92 @@
+-- CREATE table
+use NaTours
+go
+create table Role
+(
+    id        int primary key     not null,
+    name  varchar(50)                       not null unique,
+)
+
+
+-- insert data into ROLE table
+use NaTours
+go
+insert into Role
+    (id, name)
+values
+     (1, 'user'), (2, 'guide'), (3, 'lead-guide'), (4, 'admin')
+
+
+
+use NaTours
+go
+create table Users
+(
+    id        int identity (1,1) primary key     not null,
+    userName  varchar(100)                       not null unique,
+    email     varchar(100)                       not null unique,
+    name     varchar(200)                       not null,
+    password  varchar(200)                        not null,
+    passwordAt datetime default CURRENT_TIMESTAMP not null,
+    photo     varchar(200)                      ,
+    role int foreign key references Role(id) default 1 not null,
+    createdAt datetime default CURRENT_TIMESTAMP not null,
+)
+
+
+-- CREATE table
+use NaTours
+go
+create table TourGuide
+(
+    tourId int foreign key references Tour(id) not null,
+    userId int foreign key references Users(id) not null,
+)
+
+
+
+
+
+-- insert data into table
+use NaTours
+go
+insert into Users
+    (userName, email, name, password, photo)
+values
+    ('test', 'test@test.com', 'test', '123456', 'avatar.png')
+
+
+
+
+-- Select
+use NaTours
+go
+SELECT t.tourId, t.userId, u.userName, u.email, u.name, u.photo, u.role
+from TourGuide as t
+left join Users as u
+on t.userId = u.id
+where t.tourId = 1;
+
+
+
+
+
+
+-- DROP table
+use NaTours
+go
+Drop table TourGuide
+
+
+use NaTours
+go
+Drop table Users
+
+use NaTours
+go
+Drop table Role
+
+
+
+
+

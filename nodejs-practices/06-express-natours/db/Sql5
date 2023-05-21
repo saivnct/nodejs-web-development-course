@@ -1,0 +1,85 @@
+-- CREATE table
+use NaTours
+go
+create table Location
+(
+    id        int identity (1,1) primary key     not null,
+    description varchar(max)    not null,
+    type        varchar(50)     not null,
+    lat         float           not null,
+    lng         float           not null,
+    address     varchar(300),
+    createdAt       datetime default CURRENT_TIMESTAMP not null,
+)
+
+
+-- CREATE table
+use NaTours
+go
+create table TourLocation
+(
+    tourId int foreign key references Tour(id) not null,
+    locationId int foreign key references Location(id) not null,
+    day           int                                not null CHECK (day >= 0),
+)
+
+
+
+
+
+
+-- CREATE table
+use NaTours
+go
+create table Review
+(
+    id        int identity (1,1) primary key            not null,
+    review    varchar(max)                              not null,
+    rating    int CHECK (rating >= 0 AND rating <= 5),
+    tourId    int foreign key references Tour (id) not  null,
+    userId    int foreign key references Users (id) not null,
+    createdAt datetime default CURRENT_TIMESTAMP        not null,
+)
+
+
+-- insert data into Review table
+use NaTours
+go
+SET IDENTITY_INSERT Review ON
+insert into Review
+    (id, review, rating, tourId, userId)
+values
+    (61, 'very ok', 5, 1, 1)
+SET IDENTITY_INSERT Review OFF
+
+
+
+
+-- DROP table
+use NaTours
+go
+Drop table Location
+
+
+
+use NaTours
+go
+Drop table TourLocation
+
+
+
+use NaTours
+go
+Drop table Review
+
+
+
+-- Select
+use NaTours
+go
+SELECT t.tourId, t.locationId, t.day, l.description, l.type, l.lat, l.lng, l.address
+from TourLocation as t
+left join Location as l
+on t.locationId = l.id
+where t.tourId = 1
+ORDER BY t.day;
