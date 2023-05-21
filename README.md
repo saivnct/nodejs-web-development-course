@@ -4,7 +4,7 @@
 
 Series of lectures and projects for studying & practicing HTML, Javascript, CSS5, and Nodejs
 
-# LECTURES
+# 8 LECTURES - Javascript - CSS - Nodejs
 
 <div class="image-container" align="center">
   <img src="readme/img0-1.png" alt="Image 1"  height="300">
@@ -12,7 +12,7 @@ Series of lectures and projects for studying & practicing HTML, Javascript, CSS5
   <img src="readme/img0-8.png" alt="Image 8"  height="300">
 </div>
 
-# PRACTICE
+# 6 PRACTICES
 
 <div class="image-container" align="center">
   <img src="readme/img1.png" alt="Image 1"  height="300">
